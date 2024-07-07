@@ -1,36 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/events', function () {
-    return view('events');
-});
-Route::get('/singleEvent', function () {
-    return view('singleEvent');
-});
-
-Route::get('/alumini', function () {
-    return view('alumini');
-});
-Route::get('/individualAlumini', function () {
-    return view('individualAlumini');
-});
-
-Route::get('/jobs', function () {
-    return view('jobs');
-});
-
-Route::get('/jobsApply', function () {
-    return view('jobsApply');
-});
-
-Route::get('/jAForm', function () {
-    return view('jAForm');
-});
-
+Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/events', [PageController::class, 'events'])->name('events');
+Route::get('/singleEvent', [PageController::class, 'singleEvent'])->name('singleEvent');
+Route::get('/alumini', [PageController::class, 'alumini'])->name('alumini');
+Route::get('/individualAlumini', [PageController::class, 'individualAlumini'])->name('individualAlumini');
+Route::get('/jobs', [PageController::class, 'jobs'])->name('jobs');
+Route::get('/jobsApply', [PageController::class, 'jobsApply'])->name('jobsApply');
+Route::get('/jAForm', [PageController::class, 'jAForm'])->name('jAForm');
