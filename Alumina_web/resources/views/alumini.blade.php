@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5V58IK0DIDfAzzn6H0oz5kq0A8AlX8gGHbqDd" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,7 +21,7 @@
         }
         .header img {
             height: 55px;
-            width: 60px;;
+            width: 60px;
         }
         .header nav a {
             margin: 0 15px;
@@ -37,17 +38,23 @@
         }
         .search-bar {
             display: flex;
+            align-items: center;
             margin: 40px 20px;
-            align: right;
-            color:#E7ECE8;
-            border-color:#015C20;
-            
+            color: #E7ECE8;
+            border-color: #015C20;
         }
         .search-bar input {
             width: 20%;
             padding: 10px;
             font-size: 16px;
-            color:#015C20;
+            color: #015C20;
+            border-radius: 10px;
+            background-color: #E7ECE8;
+            border: 1px solid #015C20;
+        }
+        .search-bar .search-icon {
+            margin-left: -30px;
+            color: #015C20;
         }
         .main-content {
             display: flex;
@@ -65,14 +72,16 @@
             flex: 2;
             padding: 20px;
         }
-        .alumni-box{
-             display: flex; /* Added to align image and text */
-            align-items: center; /*Added to align image and text vertically*/
+        .alumni-box {
+            display: flex;
+            align-items: center;
             background-color: #E7ECE8;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
             padding: 10px;
+            text-decoration: none;
+            color: inherit;
         }
         .sidebar-box {
             background-color: #E7ECE8;
@@ -80,7 +89,6 @@
             border-radius: 5px;
             margin-bottom: 10px;
             padding: 10px;
-           
         }
         .alumni-item {
             display: flex;
@@ -90,13 +98,13 @@
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
-            flex-grow: 1; /* Ensures text takes available space */
+            flex-grow: 1;
         }
         .alumni-box img {
             border-radius: 50%;
             margin-right: 20px;
             height: 50px;
-            width: 50px; /* Ensures images are the same size */
+            width: 50px;
         }
         .friend-item {
             display: flex;
@@ -109,13 +117,13 @@
             border-radius: 50%;
             margin-right: 20px;
             height: 50px;
-            width: 50px; /* Ensures images are the same size */
+            width: 50px;
         }
         .horizontal-line {
-            width: 100%; 
-            height: 2px; 
-            background-color: black; 
-            margin: 20px 0; 
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin: 20px 0;
         }
         .friends-text {
             text-align: center;
@@ -125,9 +133,9 @@
 </head>
 <body>
     <header class="header">
-        <img src="{{ asset('images/logo.png') }}" width="45" height="35">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" width="45" height="35">
         <nav>
-        <a href="{{ route('welcome') }}">Home</a>
+            <a href="{{ route('welcome') }}">Home</a>
             <a href="{{ route('alumini') }}">Network</a>
             <a href="{{ route('events') }}">Events</a>
             <a href="{{ route('jobs') }}">Jobs</a>
@@ -137,46 +145,47 @@
     </header>
     <div class="search-bar">
         <input type="text" placeholder="Search">
+        <i class="fas fa-search search-icon"></i>
     </div>
     <div class="main-content">
         <div class="content-box">
             <div class="alumni-list">
-                <div class="alumni-box">
+                <a href="{{ route('individualAlumini', ['id' => 1]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile1.jpg') }}" alt="Profile1">
                     <div class="alumni-item">
                         <span>Jane Doe<br>Graduated in 2021</span>
                     </div>
-                </div>
-                <div class="alumni-box">
+                </a>
+                <a href="{{ route('individualAlumini', ['id' => 2]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile2.jpg') }}" alt="Profile2">
                     <div class="alumni-item">
                         <span>Emily Smith<br>Graduated in 2020</span>
                     </div>
-                </div>
-                <div class="alumni-box">
+                </a>
+                <a href="{{ route('individualAlumini', ['id' => 3]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile3.jpg') }}" alt="Profile3">
                     <div class="alumni-item">
                         <span>David Johnson<br>Graduated in 2019</span>
                     </div>
-                </div>
-                <div class="alumni-box">
+                </a>
+                <a href="{{ route('individualAlumini', ['id' => 4]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile4.jpg') }}" alt="Profile4">
                     <div class="alumni-item">
                         <span>Emma Thompson<br>Graduated in 2021</span>
                     </div>
-                </div>
-                <div class="alumni-box">
+                </a>
+                <a href="{{ route('individualAlumini', ['id' => 5]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile12.jpg') }}" alt="Profile1">
                     <div class="alumni-item">
-                        <span>Sarah Brown <br>Graduated in 2015</span>
+                        <span>Sarah Brown<br>Graduated in 2015</span>
                     </div>
-                </div>
-                <div class="alumni-box">
+                </a>
+                <a href="{{ route('individualAlumini', ['id' => 6]) }}" class="alumni-box">
                     <img src="{{ asset('images/Profile10.jpg') }}" alt="Profile1">
                     <div class="alumni-item">
                         <span>Alexander Hernandez<br>Graduated in 2017</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <aside class="sidebar">
@@ -203,11 +212,11 @@
                 </div>
                 <div class="friend-item">
                     <img src="{{ asset('images/Profile9.jpg') }}" alt="Profile8">
-                    <span>Ethan Martinez </span>
+                    <span>Ethan Martinez</span>
                 </div>
                 <div class="friend-item">
                     <img src="{{ asset('images/Profile11.jpg') }}" alt="Profile8">
-                    <span>Grace Robinson </span>
+                    <span>Grace Robinson</span>
                 </div>
             </div>
         </aside>

@@ -43,6 +43,7 @@
         <img src="{{ asset('images/logo.png') }}" width="45" height="35">
         <nav>
         <a href="{{ route('welcome') }}">Home</a>
+
             <a href="{{ route('alumini') }}">Network</a>
             <a href="{{ route('events') }}">Events</a>
             <a href="{{ route('jobs') }}">Jobs</a>
