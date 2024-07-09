@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="{{ asset('css/filter.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-R+u6N6EJN2RcO0aG0RgF9TZhH/gxV8qMVO+SlWHlH4T6Vo+8eyDXNjG30hFX3P9P2F9I5EB5iHJCH6lBRn4Kmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -196,16 +198,29 @@
             transition: background-color 0.3s ease;
         }
 
+        .scroll-left-button,
+        .scroll-right-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background-color: #063D19;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+        }
+
         .scroll-left-button {
             left: 20px;
-            padding: 10px;
         }
 
         .scroll-right-button {
             right: 20px;
-            padding: 10px;
         }
-        .mb-4{
+
+        .mb-4 {
             border-bottom: 0px solid rgb(219, 219, 219);
         }
 
@@ -215,13 +230,15 @@
             margin-left: 10px;
             padding-bottom: 10px;
         }
+
         .Jobcontainer2 {
             margin-top: 5px;
             padding: 40px 60px;
             margin-left: 10px;
-            padding-bottom: 80px;
+            padding-bottom: 0px;
             transform: translateY(-50px);
         }
+
         .job-card {
             background: linear-gradient(to right, #c0ccc3, #ccd9ce);
             border-radius: 20px;
@@ -285,17 +302,122 @@
         }
 
         #view-more-btn {
-            padding: 12px 24px;
+            padding: 12px 44px 12px 24px;
             border-radius: 25px;
-            background-color: #343A40;
+            border: 2px solid black;
+            background-color: #282828;
             color: white;
             border: none;
-            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+            position: relative;
         }
 
         #view-more-btn:hover {
-            background-color: #212529;
-            color: #FFFFFF;
+            background-color: #515151;
+            color: white;
+        }
+        .fa-chevron-right {
+            position: absolute;
+    right: 20px; 
+    margin-left:10px;
+    
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: white;
+}
+
+
+        .User-name {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .user-details {
+            display: flex;
+            color: #616060;
+            gap: 10px;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .user-details span {
+            background: none;
+            border: 1px solid #828181;
+            border-radius: 18px;
+            padding: 6px 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .User-card {
+            flex: 0 0 auto;
+            width: 450px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            padding: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feedbacks {
+            display: flex;
+            gap: 50px;
+            padding: 4px;
+            width: 90%;
+            margin: auto;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .Feedback-title {
+            font-size: 45px;
+            padding-top: 20px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .Feedback-section {
+            background-color: #F1F1F1;
+            margin-top: 0px;
+            padding: 40px 0px;
+            padding-bottom: 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .Feedback-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .User-card img {
+
+            width: 60px;
+            /* Adjust image width as needed */
+            height: auto;
+            margin-top: 5px;
+            border-radius: 50%;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .User-profile {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -370,76 +492,173 @@
     </div>
 
     <div class="Filtercontainer" id="filterPopup">
-    <div class="filter-content">
-        <div class="row row-cols-1 row-cols-md-2">
-        <div class="JobType">
-                <h5>Location</h5>
-                <div class="buttonContainer-sub">
-                    <button class="btn btn-light btn-sm mb-1">Sri Lanka</button>
-                    <button class="btn btn-light btn-sm mb-1">Abroad</button>
-                    <button class="btn btn-light btn-sm mb-1">Central. Sri Lanka</button>
-                    <br>
-                    <button class="btn btn-light btn-sm mb-1">Western, Sri Lanka</button>
-                    <button class="btn btn-light btn-sm mb-1">Northern, Sri Lanka</button>
-                    <button class="btn btn-light btn-sm mb-1">Colombo</button>
+        <div class="filter-content">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="JobType">
+                    <h5>Location</h5>
+                    <div class="buttonContainer-sub">
+                        <button class="btn btn-light btn-sm mb-1">Sri Lanka</button>
+                        <button class="btn btn-light btn-sm mb-1">Abroad</button>
+                        <button class="btn btn-light btn-sm mb-1">Central. Sri Lanka</button>
+                        <br>
+                        <button class="btn btn-light btn-sm mb-1">Western, Sri Lanka</button>
+                        <button class="btn btn-light btn-sm mb-1">Northern, Sri Lanka</button>
+                        <button class="btn btn-light btn-sm mb-1">Colombo</button>
+                    </div>
+                </div>
+                <div class="JobType">
+                    <h5>Experience</h5>
+                    <div class="buttonContainer-sub">
+                        <button class="btn btn-light btn-sm mb-1">Intern</button>
+                        <button class="btn btn-light btn-sm mb-1">Associate</button>
+                        <button class="btn btn-light btn-sm mb-1">Mid-Senior</button>
+                        <br>
+                        <button class="btn btn-light btn-sm mb-1">Executive</button>
+                        <button class="btn btn-light btn-sm mb-1">Manager</button>
+                    </div>
+                </div>
+                <div class="JobType">
+                    <h5>Work Type</h5>
+                    <div class="buttonContainer-sub">
+                        <button class="btn btn-light btn-sm mb-1">On-Site</button>
+                        <button class="btn btn-light btn-sm mb-1">Remote</button>
+                        <button class="btn btn-light btn-sm mb-1">Hybrid</button>
+                    </div>
+                </div>
+
+                <div class="JobType">
+                    <h5>Date Posted</h5>
+                    <div class="buttonContainer-sub">
+                        <button class="btn btn-light btn-sm mb-1">Past 24h</button>
+                        <button class="btn btn-light btn-sm mb-1">Past Month</button>
+                        <button class="btn btn-light btn-sm mb-1">Past Week</button>
+                    </div>
+                </div>
+
+
+
+                <div class="JobType">
+                    <h5>Job Type</h5>
+                    <div class="buttonContainer-sub">
+                        <button class="btn btn-light btn-sm mb-1">Full Time</button>
+                        <button class="btn btn-light btn-sm mb-1">Part Time</button>
+                        <button class="btn btn-light btn-sm mb-1">Contract</button>
+                    </div>
                 </div>
             </div>
-            <div class="JobType">
-                <h5>Experience</h5>
-                <div class="buttonContainer-sub">
-                    <button class="btn btn-light btn-sm mb-1">Intern</button>
-                    <button class="btn btn-light btn-sm mb-1">Associate</button>
-                    <button class="btn btn-light btn-sm mb-1">Mid-Senior</button>
-                    <br>
-                    <button class="btn btn-light btn-sm mb-1">Executive</button>
-                    <button class="btn btn-light btn-sm mb-1">Manager</button>
-                </div>
-            </div>
-            <div class="JobType">
-                <h5>Work Type</h5>
-                <div class="buttonContainer-sub">
-                    <button class="btn btn-light btn-sm mb-1">On-Site</button>
-                    <button class="btn btn-light btn-sm mb-1">Remote</button>
-                    <button class="btn btn-light btn-sm mb-1">Hybrid</button>
-                </div>
-            </div>
+            <div class="buttonContainer">
 
-            <div class="JobType">
-                <h5>Date Posted</h5>
-                <div class="buttonContainer-sub">
-                    <button class="btn btn-light btn-sm mb-1">Past 24h</button>
-                    <button class="btn btn-light btn-sm mb-1">Past Month</button>
-                    <button class="btn btn-light btn-sm mb-1">Past Week</button>
-                </div>
-            </div>
-
-
-
-            <div class="JobType">
-                <h5>Job Type</h5>
-                <div class="buttonContainer-sub">
-                    <button class="btn btn-light btn-sm mb-1">Full Time</button>
-                    <button class="btn btn-light btn-sm mb-1">Part Time</button>
-                    <button class="btn btn-light btn-sm mb-1">Contract</button>
-                </div>
+                <button type="button" class="btn-secondary" onclick="discardFilters()">Discard Filters</button>
+                <button type="button" class="btn-primary" onclick="applyFilters()">Apply Filters</button>
             </div>
         </div>
-        <div class="buttonContainer">
+    </div>
 
-            <button type="button" class="btn-secondary" onclick="discardFilters()">Discard Filters</button>
-            <button type="button" class="btn-primary" onclick="applyFilters()">Apply Filters</button>
-        </div>
-    </div>
-    </div>
     <div class="Jobcontainer2">
         <div class="row row-cols-1 row-cols-md-2" id="job-list">
-
-            <div class="text-center my-4">
-                <button class="btn btn-dark" id="view-more-btn">View More</button>
-            </div>
+        </div>
+        <div class="text-center my-4">
+            <button class="btn btn-dark" id="view-more-btn">View More
+            <i class="fas fa-chevron-right ml-2"></i>
+            </button>
         </div>
     </div>
-   
+
+    <div class="Feedback-section">
+        <h2 class="Feedback-title">Feedback from our Partners</h2>
+        <div class="Feedback-container">
+            <div class="feedbacks">
+
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
+                    </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
+                </div>
+
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
+                    </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
+                </div>
+
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
+                    </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
+                </div>
+
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
+                    </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
+                </div>
+
+            </div>
+        </div>
+        <button class="scroll-left-button scroll-button" onclick="scrollCategories('left')">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="scroll-right-button scroll-button" onclick="scrollCategories('right')">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+
+
+
+
 
 
 
@@ -451,6 +670,22 @@
     <script>
         function scrollCategories(direction) {
             const container = document.querySelector('.categories');
+            const scrollStep = 220;
+            if (direction === 'left') {
+                container.scrollBy({
+                    left: -scrollStep,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'right') {
+                container.scrollBy({
+                    left: scrollStep,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function scrollCategories(direction) {
+            const container = document.querySelector('.feedbacks');
             const scrollStep = 220;
             if (direction === 'left') {
                 container.scrollBy({
