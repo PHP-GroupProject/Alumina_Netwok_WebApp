@@ -427,91 +427,96 @@
 <body>
 
 
+    <div class="Feedback-section">
+        <h2 class="Feedback-title">Feedback from our Partners</h2>
+        <div class="Feedback-container">
+            <div class="feedbacks">
 
-
-    <div class="Jobcontainer">
-        <div class="d-flex justify-content-between align-items-center my-4">
-            <h1>Our Featured Jobs</h1>
-            <button class="btn btn-outline-secondary" onclick="openFilterPopup()">
-                <i class="bi bi-funnel"></i> Filter
-            </button>
-
-        </div>
-    </div>
-
-    <div class="Filtercontainer" id="filterPopup">
-        <div class="filter-content">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="JobType">
-                    <h5>Location</h5>
-                    <div class="buttonContainer-sub">
-                        <button class="btn btn-light btn-sm mb-1">Sri Lanka</button>
-                        <button class="btn btn-light btn-sm mb-1">Abroad</button>
-                        <button class="btn btn-light btn-sm mb-1">Central. Sri Lanka</button>
-                        <br>
-                        <button class="btn btn-light btn-sm mb-1">Western, Sri Lanka</button>
-                        <button class="btn btn-light btn-sm mb-1">Northern, Sri Lanka</button>
-                        <button class="btn btn-light btn-sm mb-1">Colombo</button>
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
                     </div>
-                </div>
-                <div class="JobType">
-                    <h5>Experience</h5>
-                    <div class="buttonContainer-sub">
-                        <button class="btn btn-light btn-sm mb-1">Intern</button>
-                        <button class="btn btn-light btn-sm mb-1">Associate</button>
-                        <button class="btn btn-light btn-sm mb-1">Mid-Senior</button>
-                        <br>
-                        <button class="btn btn-light btn-sm mb-1">Executive</button>
-                        <button class="btn btn-light btn-sm mb-1">Manager</button>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
                     </div>
-                </div>
-                <div class="JobType">
-                    <h5>Work Type</h5>
-                    <div class="buttonContainer-sub">
-                        <button class="btn btn-light btn-sm mb-1">On-Site</button>
-                        <button class="btn btn-light btn-sm mb-1">Remote</button>
-                        <button class="btn btn-light btn-sm mb-1">Hybrid</button>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                     </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
                 </div>
 
-                <div class="JobType">
-                    <h5>Date Posted</h5>
-                    <div class="buttonContainer-sub">
-                        <button class="btn btn-light btn-sm mb-1">Past 24h</button>
-                        <button class="btn btn-light btn-sm mb-1">Past Month</button>
-                        <button class="btn btn-light btn-sm mb-1">Past Week</button>
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
                     </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
                 </div>
 
-
-
-                <div class="JobType">
-                    <h5>Job Type</h5>
-                    <div class="buttonContainer-sub">
-                        <button class="btn btn-light btn-sm mb-1">Full Time</button>
-                        <button class="btn btn-light btn-sm mb-1">Part Time</button>
-                        <button class="btn btn-light btn-sm mb-1">Contract</button>
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
                     </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
                 </div>
+
+                <div class="User-card">
+                    <div class="user-details">
+                        <span>Designer</span>
+                    </div>
+                    <div class="User-profile">
+                        <img src="{{ asset('images/Logos/user-logo.png') }}">
+                        <div class="User-name">Janis Reeves</div>
+                    </div>
+                    <div class="Starts">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="user-details">
+                        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus </div>
+                </div>
+
             </div>
-            <div class="buttonContainer">
-
-                <button type="button" class="btn-secondary" onclick="discardFilters()">Discard Filters</button>
-                <button type="button" class="btn-primary" onclick="applyFilters()">Apply Filters</button>
-            </div>
         </div>
+        <button class="scroll-left-button scroll-button" onclick="scrollFeedbacks('left')">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="scroll-right-button scroll-button" onclick="scrollFeedbacks('right')">
+            <i class="bi bi-chevron-right"></i>
+        </button>
     </div>
-
-    <div class="Jobcontainer2">
-        <div class="row row-cols-1 row-cols-md-2" id="job-list">
-        </div>
-        <div class="text-center my-4">
-            <button class="btn btn-dark" id="view-more-btn">View More
-                <i class="fas fa-chevron-right ml-2"></i>
-            </button>
-        </div>
-    </div>
-
 
 
 
@@ -526,138 +531,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const jobList = document.getElementById('job-list');
-            const viewMoreBtn = document.getElementById('view-more-btn');
-            const jobs = [{
-                    title: "Product Manager",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Full Time",
-                    location: "Colombo 03, LK",
-                    category: "Senior",
-                    site: "Acentura Inc.",
-                },
-                {
-                    title: "Product Designer",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Full Time",
-                    location: "Colombo 02, LK",
-                    category: "Intern",
-                    site: "John Keels IT",
-                },
-                {
-                    title: "Software Engineer",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Full Time",
-                    location: "Trace, Colombo 10, LK",
-                    category: "Associate",
-                    site: "LSEG (PVT) Ltd.",
-                },
-                {
-                    title: "Customer Support",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Part Time",
-                    location: "Coooperative Office, LK",
-                    category: "Intern",
-                    site: "Dialog Axiata",
-                },
-                {
-                    title: "Recruiting Coordinator",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Part Time",
-                    location: "Panadura, LK",
-                    category: "Entry Level",
-                    site: "MAS Intimates",
-                },
-                {
-                    title: "UI / UX Designer",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Part Time",
-                    location: "Colombo 03, LK",
-                    category: "Associate",
-                    site: "Creative Software",
-                },
-                {
-                    title: "Marketing Specialist",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Full Time",
-                    location: "Nugegoda, LK",
-                    category: "Marketing",
-                    site: "EAM Maliban Group",
-                },
-                {
-                    title: "Data Analyst",
-                    companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "Full Time",
-                    location: "Katunayake, LK",
-                    category: "Data",
-                    site: "HNB Assuarance PLC",
-                }
-            ];
-
-            function createJobCard(job) {
-                return `
-                    <div class="col mb-4">
-                        <div class="job-card">
-                            <div class="job-details">
-                                <span>${job.type}</span>
-                                <span>${job.category}</span>
-                            </div>
-                            <img src="${job.companyLogo}" alt="${job.title}">
-                            <h5>${job.title}</h5>
-                            <div class="job-site">
-                                <span>${job.site}</span>
-                                <span>${job.location}</span>
-                            </div>
-                        <a href="{{ route('jobsApply') }}" >
-    <button type="button" class="apply-btn">Apply Now</button>
-</a>
-                        </div>
-                    </div>
-                `;
-            }
-
-            function loadJobs(showAll = false) {
-                jobList.innerHTML = '';
-                const jobSubset = showAll ? jobs : jobs.slice(0, 6);
-                jobSubset.forEach(job => {
-                    jobList.innerHTML += createJobCard(job);
+ 
+        function scrollFeedbacks(direction) {
+            const container = document.querySelector('.feedbacks');
+            const scrollStep = 220;
+            if (direction === 'left') {
+                container.scrollBy({
+                    left: -scrollStep,
+                    behavior: 'smooth'
                 });
-                if (showAll) {
-                    viewMoreBtn.style.display = 'none';
-                }
+            } else if (direction === 'right') {
+                container.scrollBy({
+                    left: scrollStep,
+                    behavior: 'smooth'
+                });
             }
+        }
+</script>
 
-            loadJobs();
-
-            viewMoreBtn.addEventListener('click', function() {
-                loadJobs(true);
-            });
-        });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        function openFilterPopup() {
-            document.getElementById('filterPopup').style.display = 'flex';
-        }
-
-        function closeFilterPopup() {
-            document.getElementById('filterPopup').style.display = 'none';
-        }
-
-        function discardFilters() {
-            closeFilterPopup();
-        }
-
-        function applyFilters() {
-            closeFilterPopup();
-        }
-    </script>
+  
 
 </body>
 
