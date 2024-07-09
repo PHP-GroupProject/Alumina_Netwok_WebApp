@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5V58IK0DIDfAzzn6H0oz5kq0A8AlX8gGHbqDd" crossorigin="anonymous">
-    <style>
+   <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
