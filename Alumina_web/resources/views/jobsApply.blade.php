@@ -393,7 +393,10 @@ h3{
                           Maximum age of 35 years
                     </p>
                 </div>
+                <a href="{{ route('jAForm') }}" >
                 <button type="submit">Apply</button>
+</a>
+              
         </div>
     </section>
 
