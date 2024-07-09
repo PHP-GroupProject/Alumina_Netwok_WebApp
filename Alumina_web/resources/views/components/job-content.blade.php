@@ -7,7 +7,7 @@
     <title>Alumni Network</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-
+    <link href="{{ asset('css/filter.css') }}" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
 
         .HeroSection {
             text-align: center;
-            margin-top:100px;
+            margin-top: 100px;
         }
 
         .Herocontent {
@@ -205,14 +205,23 @@
             right: 20px;
             padding: 10px;
         }
+        .mb-4{
+            border-bottom: 0px solid rgb(219, 219, 219);
+        }
 
         .Jobcontainer {
+            margin-top: 5px;
+            padding: 10px 60px 60px 60px;
+            margin-left: 10px;
+            padding-bottom: 10px;
+        }
+        .Jobcontainer2 {
             margin-top: 5px;
             padding: 40px 60px;
             margin-left: 10px;
             padding-bottom: 80px;
+            transform: translateY(-50px);
         }
-
         .job-card {
             background: linear-gradient(to right, #c0ccc3, #ccd9ce);
             border-radius: 20px;
@@ -353,17 +362,86 @@
     <div class="Jobcontainer">
         <div class="d-flex justify-content-between align-items-center my-4">
             <h1>Our Featured Jobs</h1>
-            <button class="btn btn-outline-secondary">
+            <button class="btn btn-outline-secondary" onclick="openFilterPopup()">
                 <i class="bi bi-funnel"></i> Filter
             </button>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2" id="job-list">
-            <!-- Jobs will be dynamically inserted here -->
-        </div>
-        <div class="text-center my-4">
-            <button class="btn btn-dark" id="view-more-btn">View More</button>
+
         </div>
     </div>
+
+    <div class="Filtercontainer" id="filterPopup">
+    <div class="filter-content">
+        <div class="row row-cols-1 row-cols-md-2">
+        <div class="JobType">
+                <h5>Location</h5>
+                <div class="buttonContainer-sub">
+                    <button class="btn btn-light btn-sm mb-1">Sri Lanka</button>
+                    <button class="btn btn-light btn-sm mb-1">Abroad</button>
+                    <button class="btn btn-light btn-sm mb-1">Central. Sri Lanka</button>
+                    <br>
+                    <button class="btn btn-light btn-sm mb-1">Western, Sri Lanka</button>
+                    <button class="btn btn-light btn-sm mb-1">Northern, Sri Lanka</button>
+                    <button class="btn btn-light btn-sm mb-1">Colombo</button>
+                </div>
+            </div>
+            <div class="JobType">
+                <h5>Experience</h5>
+                <div class="buttonContainer-sub">
+                    <button class="btn btn-light btn-sm mb-1">Intern</button>
+                    <button class="btn btn-light btn-sm mb-1">Associate</button>
+                    <button class="btn btn-light btn-sm mb-1">Mid-Senior</button>
+                    <br>
+                    <button class="btn btn-light btn-sm mb-1">Executive</button>
+                    <button class="btn btn-light btn-sm mb-1">Manager</button>
+                </div>
+            </div>
+            <div class="JobType">
+                <h5>Work Type</h5>
+                <div class="buttonContainer-sub">
+                    <button class="btn btn-light btn-sm mb-1">On-Site</button>
+                    <button class="btn btn-light btn-sm mb-1">Remote</button>
+                    <button class="btn btn-light btn-sm mb-1">Hybrid</button>
+                </div>
+            </div>
+
+            <div class="JobType">
+                <h5>Date Posted</h5>
+                <div class="buttonContainer-sub">
+                    <button class="btn btn-light btn-sm mb-1">Past 24h</button>
+                    <button class="btn btn-light btn-sm mb-1">Past Month</button>
+                    <button class="btn btn-light btn-sm mb-1">Past Week</button>
+                </div>
+            </div>
+
+
+
+            <div class="JobType">
+                <h5>Job Type</h5>
+                <div class="buttonContainer-sub">
+                    <button class="btn btn-light btn-sm mb-1">Full Time</button>
+                    <button class="btn btn-light btn-sm mb-1">Part Time</button>
+                    <button class="btn btn-light btn-sm mb-1">Contract</button>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer">
+
+            <button type="button" class="btn-secondary" onclick="discardFilters()">Discard Filters</button>
+            <button type="button" class="btn-primary" onclick="applyFilters()">Apply Filters</button>
+        </div>
+    </div>
+    </div>
+    <div class="Jobcontainer2">
+        <div class="row row-cols-1 row-cols-md-2" id="job-list">
+
+            <div class="text-center my-4">
+                <button class="btn btn-dark" id="view-more-btn">View More</button>
+            </div>
+        </div>
+    </div>
+   
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -387,24 +465,23 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const jobList = document.getElementById('job-list');
             const viewMoreBtn = document.getElementById('view-more-btn');
-            const jobs = [
-                {
+            const jobs = [{
                     title: "Product Manager",
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
                     type: "Full Time",
                     location: "Colombo 03, LK",
-                    category: "Marketing",
+                    category: "Senior",
                     site: "Acentura Inc.",
                 },
                 {
                     title: "Product Designer",
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
                     type: "Full Time",
-                    location: "Colombo, LK",
-                    category: "Designer",
+                    location: "Colombo 02, LK",
+                    category: "Intern",
                     site: "John Keels IT",
                 },
                 {
@@ -412,7 +489,7 @@
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
                     type: "Full Time",
                     location: "Trace, Colombo 10, LK",
-                    category: "Developer",
+                    category: "Associate",
                     site: "LSEG (PVT) Ltd.",
                 },
                 {
@@ -420,7 +497,7 @@
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
                     type: "Part Time",
                     location: "Coooperative Office, LK",
-                    category: "Support",
+                    category: "Intern",
                     site: "Dialog Axiata",
                 },
                 {
@@ -428,15 +505,15 @@
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
                     type: "Part Time",
                     location: "Panadura, LK",
-                    category: "Customer Service",
+                    category: "Entry Level",
                     site: "MAS Intimates",
                 },
                 {
                     title: "UI / UX Designer",
                     companyLogo: "{{ asset('images/Logos/ggl.png') }}",
-                    type: "F Time",
-                    location: "Colombo, LK",
-                    category: "Designer",
+                    type: "Part Time",
+                    location: "Colombo 03, LK",
+                    category: "Associate",
                     site: "Creative Software",
                 },
                 {
@@ -490,11 +567,34 @@
 
             loadJobs();
 
-            viewMoreBtn.addEventListener('click', function () {
+            viewMoreBtn.addEventListener('click', function() {
                 loadJobs(true);
             });
         });
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function openFilterPopup() {
+            document.getElementById('filterPopup').style.display = 'flex';
+        }
+
+        function closeFilterPopup() {
+            document.getElementById('filterPopup').style.display = 'none';
+        }
+
+        function discardFilters() {
+            closeFilterPopup();
+        }
+
+        function applyFilters() {
+            closeFilterPopup();
+        }
+    </script>
+
 </body>
 
 </html>

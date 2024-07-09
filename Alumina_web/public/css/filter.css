@@ -1,0 +1,84 @@
+.Filtercontainer {
+    background-color: #ffffff;
+    display: none;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: 60px;
+    padding: 10px 40px 5px 50px;
+    width: 70%;
+    border: 2px solid black;
+    border-radius: 30px;
+    overflow-y: auto;
+    max-height: 80%;
+}
+.filter-content {
+    background-color: #fff;
+
+    margin: auto;
+
+    max-height: calc(100% - 40px);
+}
+.JobType {
+    border-bottom: 1px solid rgb(219, 219, 219);
+    border-radius: 10px;
+    padding: 10px 40px 5px 50px;
+    gap: 100px;
+}
+.filter-popup h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    border-color: #ced4da;
+    border-radius: 20px;
+    margin-right: 4px;
+    font-size: 15px;
+
+    padding: 8px 20px;
+}
+.buttonContainer-sub {
+    margin-left: 0px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.btn-light:hover {
+    background-color: #28a745;
+    color: white;
+}
+.row-cols-1 {
+    margin-top: 30px;
+}
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+    margin-bottom: 50px;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+}
+.buttonContainer {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 0px;
+    display: flex;
+    gap: 10px;
+    gap: 10px;
+    justify-content: flex-end;
+    transform: translateY(-50px);
+}
+.btn-secondary {
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-size: 15px;
+    color: none;
+    font-weight: bold;
+}
+.btn-primary {
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: bold;
+    font-size: 15px;
+}
