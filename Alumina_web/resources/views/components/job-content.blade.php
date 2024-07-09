@@ -204,12 +204,13 @@
             top: 50%;
             transform: translateY(-50%);
             padding: 10px;
-            background-color: #063D19;
+            background-color: #2bc826  ;
             color: #fff;
             border: none;
             cursor: pointer;
             z-index: 1000;
-            border-radius: 50%;
+            border-radius: 8px;
+          
         }
 
         .scroll-left-button {
@@ -783,7 +784,9 @@
                                 <span>${job.site}</span>
                                 <span>${job.location}</span>
                             </div>
-                            <button class="apply-btn">Apply Now</button>
+                        <a href="{{ route('jobsApply') }}" >
+    <button type="button" class="apply-btn">Apply Now</button>
+</a>
                         </div>
                     </div>
                 `;
