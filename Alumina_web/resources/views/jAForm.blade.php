@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -35,14 +38,15 @@
             cursor: pointer;
             border-radius: 10px;
         }
-        
     </style>
 </head>
+
 <body>
     <header class="header">
+
         <img src="{{ asset('images/logo.png') }}" width="45" height="35">
         <nav>
-        <a href="{{ route('welcome') }}">Home</a>
+            <a href="{{ route('welcome') }}">Home</a>
             <a href="{{ route('alumini') }}">Network</a>
             <a href="{{ route('events') }}">Events</a>
             <a href="{{ route('jobs') }}">Jobs</a>
@@ -50,6 +54,9 @@
         </nav>
         <button class="login">Login</button>
     </header>
-    
+
+   
+
 </body>
+
 </html>

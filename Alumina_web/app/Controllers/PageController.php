@@ -9,5 +9,9 @@ class PageController extends Controller
     {
         return view('jobsApply');
     }
+    public function jAForm()
+    {
+        return view('jAForm');
+    }
 
 }
