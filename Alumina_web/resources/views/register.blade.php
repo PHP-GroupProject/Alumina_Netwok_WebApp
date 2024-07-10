@@ -117,41 +117,68 @@
                                         <img src="{{ asset('images/logo.png') }}" style="width: 185px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1">We are The Link Plus Team</h4>
                                     </div>
+                                    <div class="mt-5">
 
-                                    <form>
+                                        @if ($errors->any())
+
+                                        <div class="col-12">
+
+                                            @foreach ($errors->all() as $error)
+
+                                            <div class="alert alert-danger">{{$error}}</div>
+
+                                            @endforeach
+
+                                        </div>
+
+                                        @endif
+                                        @if(session()->has('error'))
+
+                                        <div class="alert alert-danger">{{session('error')}}</div>
+
+                                        @endif
+
+                                        @if(session()->has('success'))
+
+                                        <div class="alert alert-success">{{session('success')}}</div>
+
+                                        @endif
+                                    </div>
+                                    <form action="{{ route('register.post') }}" method="post">
+                                        @csrf
                                         <p>Please register as a student</p>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="firstName">User Name</label>
-                                            <input type="text" id="username" class="form-control" />
+                                            <input type="text" class="form-control" name="name" placeholder="Enter a valid Username" />
                                         </div>
 
 
-                                   
+
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="email">Email ID</label>
-                                            <input type="email" id="email" class="form-control" />
+                                            <input type="email" class="form-control" name="email" placeholder="Enter an email address" />
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="pincode">Password</label>
-                                            <input type="text" id="password" class="form-control" />
+                                            <input type="text" id="password" name="password" class="form-control" />
                                         </div>
 
-                                   
 
-                                       
+
+
 
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-custom btn-block fa-lg mb-3" type="submit">Register</button>
                                         </div>
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Alreday have an account?</p>
-                    <a href="{{ route('login') }}" >
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Login here</button>
-</a>
-                </div>
+                                            <p class="mb-0 me-2">Alreday have an account?</p>
+                                            <a href="{{ route('login') }}">
+                                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Login here</button>
+                                            </a>
+                                        </div>
                                     </form>
 
                                 </div>

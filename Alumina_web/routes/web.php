@@ -12,4 +12,8 @@ Route::get('/jobs', [PageController::class, 'jobs'])->name('jobs');
 Route::get('/jobsApply', [PageController::class, 'jobsApply'])->name('jobsApply');
 Route::get('/jAForm', [PageController::class, 'jAForm'])->name('jAForm');
 Route::get('/login', [PageController::class, 'login'])->name('login');
+Route::post('/login', [PageController::class, 'loginPost'])->name('login.post');
 Route::get('/register', [PageController::class, 'register'])->name('register');
+Route::post('/register', [PageController::class, 'registerPost'])->name('register.post');
+Route::get('/logout', [PageController::class, 'logout'])->name('logout');
+
