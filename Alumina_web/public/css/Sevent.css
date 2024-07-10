@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, white -20%, #063D19 80%);
+    padding: 10px 25px;
+    color: white;
+}
+.header img {
+    height: 55px;
+    width: 60px;
+}
+.header nav a {
+    margin: 0 15px;
+    color: #063D19;
+    text-decoration: none;
+}
+.header .login {
+    background-color: white;
+    color: #015C20;
+    padding: 10px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.dis {
+    margin-left: 200px;
+    margin-right: 200px;
+    line-height: 1.6; 
+    text-align: justify;
+    flex: 1;
+    
+}
+.img1 {
+    display: flex;
+    flex: 1; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.dis2 {
+    margin-left: 200px;
+    margin-right: 200px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 20px;
+}
+.dis2 h2 {
+    text-align: center;
+    color: #063D19;
+}
+
+.con {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    margin-left:200px;
+    margin-right:500px;
+    font-size:12px;
+}
+.con button {
+    padding: 8px 20px; 
+    font-size: 16px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius:10px;
+    font-size:12px;
+    background-color:#1D442A;
+    color:white;
+}
+.con button:first-child {
+    background-color: #1D442A; 
+    color: white; 
+}
+.line{
+    margin-left:200px;
+    margin-right:200px;
+}
+.profile {
+    display: flex;
+    justify-content: center; /* Center the images container horizontally */
+    margin-top: 20px; /* Add margin top for spacing */
+    justify-content: space-between;
+    margin-left:200px;
+    margin-right:200px;
+}
+.profile .ex1, .profile .ex2 {
+    margin: 0 10px; 
+    display: block;
+}
+.profile .ex1 img, .profile .ex2 img {
+    width: 100%; 
+    height: auto; }
+.outer {
+    display: flex;
+    align-items: center;
+    display: block;
+
+}
+.date {
+    white-space: nowrap; /* Prevent date from wrapping */
+    margin-right: 5px; /* Add space between date and text */
+    /*margin-bottem:10px;*/
+    line-height: 1.6;
+    margin-top:10 px;
+    
+}
+.image-wrapper {
+position: relative;
+width: 100%;
+height: 600px;
+}
+
+.image-wrapper img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.overlay-content {
+position: absolute;
+bottom: 80px;
+left: 20px;
+color: white;
+}
+
+.overlay-content h4 {
+margin: 0 0 10px 0;
+
+
+}
+
+.overlay-content .btn {
+background-color: #063D19;
+border: none;
+border-radius: 10px;
+padding: 10px;
+width:150px;
+color: white;
+font-size: 14px;
+}
+.color-box {
+    background-color: #1D442A;
+    padding: 90px;
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.image-container .image-item {
+    width: 23%;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-container p {
+    margin-top: 1px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.btnn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color:#063D19 ;
+    color: white;
+    border: none;
+    padding: 1px 6px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1; /* Ensure button appears above the image */
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+
+
+.image-container .image-item:hover .btnn {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+

@@ -3,148 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/Sevent.css') }}">
+
     <title>Alumni Network</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, white -20%, #063D19 80%);
-            padding: 10px 25px;
-            color: white;
-        }
-        .header img {
-            height: 55px;
-            width: 60px;
-        }
-        .header nav a {
-            margin: 0 15px;
-            color: #063D19;
-            text-decoration: none;
-        }
-        .header .login {
-            background-color: white;
-            color: #015C20;
-            padding: 10px 35px;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .dis {
-            margin-left: 200px;
-            margin-right: 200px;
-            line-height: 1.6; 
-            text-align: justify;
-            flex: 1;
-            
-        }
-        .img1 {
-            display: flex;
-            flex: 1; 
-            gap: 10px; 
-            margin-top: 20px; 
-        }
-        .color-box {
-            background-color: #1D442A;
-            padding: 100px; 
-            margin-top: 20px; 
-        }
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; 
-            margin-top: 20px; 
-        }
-        .image-container div {
-            width: 23%; 
-            text-align: center; 
-            color: white; 
-        }
-        .image-container img {
-            max-width: 100%; 
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .image-container p {
-            margin-top: 10px; 
-        }
-        .dis2 {
-            margin-left: 200px;
-            margin-right: 200px;
-            line-height: 1.6;
-            text-align: justify;
-            margin-top: 20px;
-        }
-        .dis2 h2 {
-            text-align: center;
-            color: #063D19;
-        }
-        
-        .con {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 10px; 
-            margin-left:200px;
-            margin-right:500px;
-            font-size:12px;
-        }
-        .con button {
-            padding: 8px 20px; 
-            font-size: 16px; 
-            border: none; 
-            cursor: pointer; 
-            border-radius:10px;
-            font-size:12px;
-            background-color:#1D442A;
-            color:white;
-        }
-        .con button:first-child {
-            background-color: #1D442A; 
-            color: white; 
-        }
-        .line{
-            margin-left:200px;
-            margin-right:200px;
-        }
-        .profile {
-            display: flex;
-            justify-content: center; /* Center the images container horizontally */
-            margin-top: 20px; /* Add margin top for spacing */
-            justify-content: space-between;
-            margin-left:200px;
-            margin-right:200px;
-        }
-        .profile .ex1, .profile .ex2 {
-            margin: 0 10px; 
-            display: block;
-        }
-        .profile .ex1 img, .profile .ex2 img {
-            width: 100%; 
-            height: auto; }
-        .outer {
-            display: flex;
-            display
-            align-items: center;
-            display: block;
-        
-        }
-        date {
-            white-space: nowrap; /* Prevent date from wrapping */
-            margin-right: 5px; /* Add space between date and text */
-            margin-bottem:10px;
-            line-height: 1.6;
-            margin-top:10 px;
-            
-        }
-        
-    </style>
+          
 </head>
 <body>
     <header class="header">
@@ -159,9 +21,20 @@
         <button class="login">Login</button>
     </header>
     
-    <div class="col-md-6">
-        <img src="{{ asset('images/sevent.png') }}" style="width: 100%; height: 500px;">
+<div class="col-md-6">
+    <div class="image-wrapper">
+        <img src="{{ asset('images/sevent15.jpg') }}" alt="Workshop Image">
+        <div class="overlay-content">
+        <button class="btn btn-primary">Workshop</button> <br>
+        
+                    <h1>Information and <br>Communication Technology<br></h1>
+                08.08.2021<br>Progressively incentivize cooperative systems through technically sound functionalities.
+                 The credibly productivate seamless data.
+       
+            
+        </div>
     </div>
+</div>
     <div class="outer">
     <div class="date">
         08.08.2021-------6.00pm
@@ -174,8 +47,8 @@ Seamlessly syndicate cutting-edge architectures rather than collaborative collab
     
     
     <div class="img1">
-        <img src="{{ asset('images/sevent2.png') }}" style="width: 50%; height: 300px;">
-        <img src="{{ asset('images/sevent3.png') }}" style="width: 50%; height: 300px;">
+        <img src="{{ asset('images/sevent16.jpg') }}" style="width: 50%; height: 300px;">
+        <img src="{{ asset('images/sevent17.jpg') }}" style="width: 50%; height: 300px;">
     </div>
     
     </div>
@@ -198,6 +71,7 @@ Seamlessly syndicate cutting-edge architectures rather than collaborative collab
 </div>
 <div class="line">
 <img src="{{ asset('images/sevent11.png') }}" style="width: 100%; height: 3px;">
+
     </div>
     <div class="profile">
         
@@ -210,55 +84,50 @@ Thinker & Designer</h6>
 <img src="{{ asset('images/sevent14.png') }}" style="width: 60%; height: 20px;"></div>
     
     </div>
+
     <div class="color-box">
-        <div class="image-container">
-            <div>
-                <img src="{{ asset('images/sevent6.png') }}" alt="Image 1">
-                <p>
-                    08.08.2021<br>
-                    Things to know before visiting Cave in Germany<br>
-                   <h6> Progressively incentivize cooperative systems through technically sound functionalities.<br>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="{{ asset('images/sevent6.png') }}" alt="Image 1">
+            <button class="btnn">Workshop</button>
+            <p>
+                08.08.2021<br>
+                Things to know before visiting Cave in Germany
+                <h6>Progressively incentivize cooperative systems through technically sound functionalities.<br>
                     Credibly productivate seamless data with flexible schemas.</h6>
-                </p>
-            </div>
-            <div>
-                <img src="{{ asset('images/sevent7.png') }}" alt="Image 2">
-                <p>
-                    08.08.2021<br>
-                    Nina Smith vibrant work collab with Nike Dunk<br>
-                  <h6>progressively incentivize cooperative systems through
-technically sound functionalities. Credibly productivate
-seamless data with flexible schemas.</h6>
-                </p>
-            </div>
-            <div>
-                <img src="{{ asset('images/sevent8.png') }}" alt="Image 3">
-                <p>
-                    08.08.2021<br>
-                    Richard Norton photorealistic
-rendering as real photos
-<h6>
-Progressively incentivize cooperative systems through
-technically sound functionalities. Credibly productivate
-seamless data with flexible schemas.
-</h6>
-                </p>
-            </div>
-            <div>
-                <img src="{{ asset('images/sevent9.png') }}" alt="Image 4">
-                <p>
-                    08.08.2021<br>
-                    25 quality collectors toys inspired
-                    by famous films
-                    <h6>
-                    Progressively incentivize cooperative systems through
-technically sound functionalities. Credibly productivate
-seamless data with flexible schemas.
-                    </h6>
-                </p>
-            </div>
+            </p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/sevent7.png') }}" alt="Image 2">
+            <button class="btnn">Workshop</button>
+            <p>
+                08.08.2021<br>
+                Nina Smith vibrant work collab with Nike Dunk<br>
+                <h6>Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</h6>
+            </p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/sevent8.png') }}" alt="Image 3">
+            <button class="btnn">Workshop</button>
+            <p>
+                08.08.2021<br>
+                Richard Norton photorealistic rendering as real photos<br>
+                <h6>Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</h6>
+            </p>
+        </div>
+        <div class="image-item">
+            <img src="{{ asset('images/sevent9.png') }}" alt="Image 4">
+            <button class="btnn">Workshop</button>
+            <p>
+                08.08.2021<br>
+                25 quality collectors toys inspired by famous films<br>
+                <h6>Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</h6>
+            </p>
         </div>
     </div>
+</div>
+
+    
     
 </body>
 </html>
