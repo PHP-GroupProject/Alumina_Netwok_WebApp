@@ -58,7 +58,9 @@
             <a href="{{ route('jobs') }}">Jobs</a>
             <a href="#">Contact</a>
         </nav>
+        <a href="{{ route('login') }}" >
         <button class="login">Login</button>
+        </a>
     </header>
     
 
