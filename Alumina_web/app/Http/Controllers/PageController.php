@@ -45,4 +45,12 @@ class PageController extends Controller
     {
         return view('jAForm');
     }
+    public function login()
+    {
+        return view('login');
+    }
+    public function register()
+    {
+        return view('register');
+    }
 }

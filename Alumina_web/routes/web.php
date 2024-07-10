@@ -11,3 +11,5 @@ Route::get('/individualAlumini', [PageController::class, 'individualAlumini'])->
 Route::get('/jobs', [PageController::class, 'jobs'])->name('jobs');
 Route::get('/jobsApply', [PageController::class, 'jobsApply'])->name('jobsApply');
 Route::get('/jAForm', [PageController::class, 'jAForm'])->name('jAForm');
+Route::get('/login', [PageController::class, 'login'])->name('login');
+Route::get('/register', [PageController::class, 'register'])->name('register');
