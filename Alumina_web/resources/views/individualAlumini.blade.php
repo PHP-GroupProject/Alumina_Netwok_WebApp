@@ -104,12 +104,12 @@
         }
 
         .connect-btn {
-            background-color: #16a085;
+            background-color: #015C20;
             color: white;
         }
 
         .message-btn {
-            background-color: #16a085;
+            background-color: #015C20;
             color: white;
         }
 
@@ -153,10 +153,10 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 1295px;
+            max-width: 1300px;
             text-align: center;
-            justify-content: center;   
-            
+            justify-content: center;
+
         }
 
         .info-item {
@@ -178,7 +178,7 @@
             border-radius: 8px;
             color: #333;
             border: 1px solid #ddd;
-           
+
         }
 
         .container {
@@ -215,7 +215,7 @@
 
         .skill {
             background-color: #fff;
-            border: 2px solid #83a78d;
+            border: 2px solid #015C20;
             color: #333;
             padding: 5px 15px;
             border-radius: 20px;
@@ -244,7 +244,7 @@
     <main>
         <div class="profile-header">
             <div class="banner">
-                <img src="{{ asset('images\sevent.png') }}" alt="Banner">
+                <img src="{{ asset('images\sevent15.jpg') }}" alt="Banner">
             </div>
             <div class="profile-picture">
                 <img src="{{ asset('images\profile7.jpg') }}" alt="Profile Picture">
@@ -269,26 +269,26 @@
                 <a href="#"><img src="images\facebook.png" alt="facebook"></a>
                 <a href="#"><img src="images\whatsapp.png" alt="whtsapp"></a>
             </div>
-        
-        <div class="details">
-            <div class="info-item">
-                <span class="label">Availability</span>
-                <span class="value">Full Time</span>
-            </div>
-            <div class="info-item">
-                <span class="label">Age</span>
-                <span class="value">30yrs</span>
-            </div>
-            <div class="info-item">
-                <span class="label">Location</span>
-                <span class="value">Moscow, Russia</span>
-            </div>
-            <div class="info-item">
-                <span class="label">Workplace</span>
-                <span class="value">IFS</span>
+
+            <div class="details">
+                <div class="info-item">
+                    <span class="label">Availability</span>
+                    <span class="value">Full Time</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Age</span>
+                    <span class="value">30yrs</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Location</span>
+                    <span class="value">Moscow, Russia</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Workplace</span>
+                    <span class="value">IFS</span>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
