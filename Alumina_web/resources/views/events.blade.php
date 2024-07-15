@@ -302,37 +302,43 @@
         </div>
 
         <div class="category">
+        <div class="eventset">
+    <a href="{{ route('singleEvent') }}">
+        <div class="image-container">
+            <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
+            <span class="tag">Workshop</span></a>
+        </div>
+        <p class="date">08.08.2021</p>
+        <h3>Dream destinations to visit this year in Paris</h3>
+        <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
+    
+</div>
+
             <div class="eventset">
+            <a href="{{ route('singleEvent') }}">
                 <div class="image-container">
                     <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span>
+                    <span class="tag">Workshop</span></a>
                 </div>
                 <p class="date">08.08.2021</p>
                 <h3>Dream destinations to visit this year in Paris</h3>
                 <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
             </div>
             <div class="eventset">
+            <a href="{{ route('singleEvent') }}">
                 <div class="image-container">
                     <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span>
+                    <span class="tag">Workshop</span></a>
                 </div>
                 <p class="date">08.08.2021</p>
                 <h3>Dream destinations to visit this year in Paris</h3>
                 <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
             </div>
             <div class="eventset">
+            <a href="{{ route('singleEvent') }}">
                 <div class="image-container">
                     <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span>
-                </div>
-                <p class="date">08.08.2021</p>
-                <h3>Dream destinations to visit this year in Paris</h3>
-                <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
-            </div>
-            <div class="eventset">
-                <div class="image-container">
-                    <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span>
+                    <span class="tag">Workshop</span></a>
                 </div>
                 <p class="date">08.08.2021</p>
                 <h3>Dream destinations to visit this year in Paris</h3>
