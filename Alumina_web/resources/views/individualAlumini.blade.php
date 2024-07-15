@@ -244,7 +244,7 @@
     <main>
         <div class="profile-header">
             <div class="banner">
-                <img src="{{ asset('images\sevent.png') }}" alt="Banner">
+                <img src="{{ asset('images\sevent15.jpg') }}" alt="Banner">
             </div>
             <div class="profile-picture">
                 <img src="{{ asset('images\profile7.jpg') }}" alt="Profile Picture">
@@ -256,8 +256,9 @@
                 <p>Full Stack Web Developer</p>
             </div>
             <div class="profile-actions">
-                <a href="/connect" class="btn connect-btn">Connect</a>
-                <a href="/message" class="btn message-btn">Message</a>
+            <a href="{{ route('message') }}" class="btn connect-btn">Message</a>
+            <a href="{{ url('/message') }}" class="btn message-btn">Contact</a>
+
             </div>
         </div>
         <div class="socialmedia">

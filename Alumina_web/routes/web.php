@@ -16,4 +16,10 @@ Route::post('/login', [PageController::class, 'loginPost'])->name('login.post');
 Route::get('/register', [PageController::class, 'register'])->name('register');
 Route::post('/register', [PageController::class, 'registerPost'])->name('register.post');
 Route::get('/logout', [PageController::class, 'logout'])->name('logout');
+Route::get('/message', [PageController::class, 'message'])->name('message');
+Route::get('/message', function () {
+    return view('message');
+})->name('message');
+
+
 
