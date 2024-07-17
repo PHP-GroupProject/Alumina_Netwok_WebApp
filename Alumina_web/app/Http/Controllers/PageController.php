@@ -7,6 +7,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Models\AlumniDetail;
 
 
 class PageController extends Controller
@@ -105,4 +106,22 @@ class PageController extends Controller
         return redirect(route('login'))->with('logouted', 'Login Before Explore');
 
     }
+
+
+    public function store(Request $request)
+    {
+        // Validate form data
+        $validatedData = $request->validate([
+            'availability' => 'required',
+            'birthdate' => 'required|date',
+            'country' => 'required',
+            'city' => 'required',
+            'workplace' => 'required',
+        ]);
+
+        $alumniDetail = AlumniDetail::create($validatedData);
+
+        return view('individualAlumini', $validatedData);
+    }
+
 }
