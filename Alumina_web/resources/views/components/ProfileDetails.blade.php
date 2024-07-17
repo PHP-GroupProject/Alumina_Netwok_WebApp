@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="{{ asset('css/filter.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-R+u6N6EJN2RcO0aG0RgF9TZhH/gxV8qMVO+SlWHlH4T6Vo+8eyDXNjG30hFX3P9P2F9I5EB5iHJCH6lBRn4Kmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
+      body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -26,6 +33,7 @@
             width: 60px;
             ;
         }
+    
 
         .header nav a {
             margin: 0 15px;
@@ -222,15 +230,50 @@
             font-size: 0.9em;
             text-align: center;
         }
+
+      .form-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .form-title {
+      margin-bottom: 30px;
+      text-align: center;
+      color: #007bff;
+      font-weight: bold;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .age-display {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .custom-input {
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+      padding: 10px;
+      font-size: 16px;
+    }
     </style>
 </head>
 
-
-
-
-
 <body>
-    <header class="header">
+
+<header class="header">
         <img src="{{ asset('images/logo.png') }}" width="45" height="35">
         <nav>
             <a href="{{ route('welcome') }}">Home</a>
@@ -241,6 +284,7 @@
         </nav>
         <button class="login">Login</button>
     </header>
+   
     <main>
         <div class="profile-header">
             <div class="banner">
@@ -255,81 +299,17 @@
                 <h1>Alexander Lee</h1>
                 <p>Full Stack Web Developer</p>
             </div>
-            <div class="profile-actions">
-            <a href="{{ route('message') }}" class="btn connect-btn">Message</a>
-            <a href="{{ url('/message') }}" class="btn message-btn">Contact</a>
-            <a href="{{ route('profile.details') }}" class="btn message-btn">Update Profile</a>
+            <div >
             </div>
+         
+
+
         </div>
-        @if (isset($availability))
-        <div class="container">
-            <h2>Added Details:</h2>
-            <p><strong>Availability:</strong> {{ $availability }}</p>
-            <p><strong>Birthdate:</strong> {{ $birthdate }}</p>
-            <p><strong>Country:</strong> {{ $country }}</p>
-            <p><strong>City:</strong> {{ $city }}</p>
-            <p><strong>Workplace:</strong> {{ $workplace }}</p>
-        </div>
-    @endif
-        <div class="socialmedia">
-    
-            <div class="social-login">
-                <a href="#"><img src="images\github.png" alt="github"></a>
-                <a href="#"><img src="images\linkedin.png" alt="linkedin"></a>
-                <a href="#"><img src="images\twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images\facebook.png" alt="facebook"></a>
-                <a href="#"><img src="images\whatsapp.png" alt="whtsapp"></a>
-            </div>
+      
 
-            <div class="details">
-                <div class="info-item">
-                    <span class="label">Availability</span>
-                    <span class="value">Full Time</span>
-                </div>
-                <div class="info-item">
-                    <span class="label">Age</span>
-                    <span class="value">30yrs</span>
-                </div>
-                <div class="info-item">
-                    <span class="label">Location</span>
-                    <span class="value">Moscow, Russia</span>
-                </div>
-                <div class="info-item">
-                    <span class="label">Workplace</span>
-                    <span class="value">IFS</span>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="container">
-            <div class="about-section">
-                <h2>ABOUT</h2>
-                <p>Our website deserves an amazing About Us page. This is your opportunity to tell your story and the
-                    business's mission and vision. With a powerful About Us page, you can connect with customers better
-                    and build trust. Over time, that trust will turn into returning revenue from loyal shoppers who
-                    continue to support your business. Want to share your About Us page ideas? Please share them with
-                    our community in the comments below!</p>
-            </div>
-            <div class="skills-section">
-                <h2>SKILLS</h2>
-                <div class="skills">
-                    <span class="skill">C</span>
-                    <span class="skill">UI</span>
-                    <span class="skill">UX</span>
-                    <span class="skill">PHP</span>
-                    <span class="skill">Flutter</span>
-                    <span class="skill">C#</span>
-                    <span class="skill">React</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                </div>
-            </div>
-        </div>
-
-
+        @include('components.ProfileForm')
     </main>
+ 
 
 </body>
 
