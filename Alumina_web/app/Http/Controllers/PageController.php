@@ -32,10 +32,7 @@ class PageController extends Controller
         return view('alumini');
     }
 
-    public function individualAlumini()
-    {
-        return view('individualAlumini');
-    }
+
 
     public function jobs()
     {
@@ -61,20 +58,20 @@ class PageController extends Controller
     }
 
     public function loginPost(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-    $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'password');
 
-    if (Auth::attempt($credentials)) {
-        return redirect()->intended(route('welcome'));
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended(route('welcome'));
+        }
+
+        return redirect()->route('login')->with('error', 'Login credentials are not valid');
     }
-
-    return redirect()->route('login')->with('error', 'Login credentials are not valid');
-}
 
 
 
@@ -85,26 +82,25 @@ class PageController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
-    
+
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['password'] = Hash::make($request->password);
-    
+
         $user = User::create($data);
-    
+
         if (!$user) {
             return redirect(route('register'))->with('error', 'Registration failed. Please try again.');
         }
-    
+
         return redirect(route('login'))->with('success', 'Registration successful. Please login to explore.');
     }
-    
+
     public function logout()
     {
         session()->flush();
         Auth::logout();
         return redirect(route('login'))->with('logouted', 'Login Before Explore');
-
     }
 
 
@@ -115,13 +111,42 @@ class PageController extends Controller
             'availability' => 'required',
             'birthdate' => 'required|date',
             'country' => 'required',
+            'age' => 'required|numeric',
             'city' => 'required',
             'workplace' => 'required',
         ]);
 
-        $alumniDetail = AlumniDetail::create($validatedData);
+        AlumniDetail::create($validatedData);
 
-        return view('individualAlumini', $validatedData);
+        return redirect()->route('individualAlumini');
     }
+    public function form($id = null)
+    {
+        $data = null;
+        if ($id) {
+            $data = AlumniDetail::find($id);
+        }
+        return view('ProfileDetails');
+    }
+    public function individualAlumini()
+    {
+        $alumini_details = AlumniDetail::all();
+        return view('individualAlumini', compact('alumini_details'));
+    }
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'availability' => 'required|string',
+            'birthdate' => 'required|date',
+            'country' => 'required|string',
+            'age' => 'required|numeric',
+            'city' => 'required|string',
+            'workplace' => 'required|string',
+        ]);
 
+        $alumniDetail = AlumniDetail::findOrFail($id);
+        $alumniDetail->update($validatedData);
+
+        return redirect()->route('individualAlumini');
+    }
 }

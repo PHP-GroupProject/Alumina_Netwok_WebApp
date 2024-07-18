@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class AlumniDetail extends Model
 {
     use HasFactory;
+    protected $table="alumni_details" ;
 
     protected $fillable = [
         'availability',
         'birthdate',
         'country',
+        'age',
         'city',
         'workplace',
      

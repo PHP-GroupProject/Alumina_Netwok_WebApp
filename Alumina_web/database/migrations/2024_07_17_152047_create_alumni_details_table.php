@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('alumni_details', function (Blueprint $table) {
             $table->id();
             $table->string('availability');
-            $table->date('birthdate');
+            $table->numeric('age');
             $table->string('country');
             $table->string('city');
             $table->string('workplace');
+            $table->date('birthdate');
 
             $table->timestamps();
         });

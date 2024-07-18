@@ -12,8 +12,10 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-R+u6N6EJN2RcO0aG0RgF9TZhH/gxV8qMVO+SlWHlH4T6Vo+8eyDXNjG30hFX3P9P2F9I5EB5iHJCH6lBRn4Kmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-      body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -33,7 +35,7 @@
             width: 60px;
             ;
         }
-    
+
 
         .header nav a {
             margin: 0 15px;
@@ -231,49 +233,115 @@
             text-align: center;
         }
 
-      .form-container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-    .form-title {
-      margin-bottom: 30px;
-      text-align: center;
-      color: #007bff;
-      font-weight: bold;
-    }
-    .form-group label {
-      font-weight: bold;
-    }
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-      font-weight: bold;
-    }
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
-    }
-    .age-display {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #007bff;
-    }
-    .custom-input {
-      border-radius: 5px;
-      border: 1px solid #ced4da;
-      padding: 10px;
-      font-size: 16px;
-    }
+        .form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .age-display {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .custom-input {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+
+        .form-container {
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: none;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+        }
+
+        .form-title {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .form-image {
+
+            background-image: url('{{ asset(' images/logo.png') }}');
+            background-size: cover;
+            background-position: center;
+
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .form-inner-container {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .age-display {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
         <img src="{{ asset('images/logo.png') }}" width="45" height="35">
         <nav>
             <a href="{{ route('welcome') }}">Home</a>
@@ -284,7 +352,7 @@
         </nav>
         <button class="login">Login</button>
     </header>
-   
+
     <main>
         <div class="profile-header">
             <div class="banner">
@@ -299,18 +367,92 @@
                 <h1>Alexander Lee</h1>
                 <p>Full Stack Web Developer</p>
             </div>
-            <div >
+            <div>
             </div>
-         
+
 
 
         </div>
-      
 
-        @include('components.ProfileForm')
+
+        <div class="form-container">
+            <div class="form-image"></div>
+            <div class="form-inner-container">
+                <h2 class="form-title">Update Personal Information</h2>
+                <form id="personal-info-form" action="{{ isset($data) ? route('store.alumni', $data->id) : route('store.alumni') }}" method="POST">
+    @csrf
+    @if(isset($data))
+        @method('PUT')
+    @endif
+
+    <div class="form-group">
+        <label for="availability">Availability</label>
+        <select class="form-control" id="availability" name="availability" required>
+            <option value="">Choose...</option>
+            <option value="FullTime" {{ isset($data) && $data->availability == 'FullTime' ? 'selected' : '' }}>FullTime</option>
+            <option value="Remote" {{ isset($data) && $data->availability == 'Remote' ? 'selected' : '' }}>Remote</option>
+            <option value="Hybrid" {{ isset($data) && $data->availability == 'Hybrid' ? 'selected' : '' }}>Hybrid</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="birthdate">Birthdate</label>
+        <input type="date" class="form-control" id="birthdate" name="birthdate" value="{{ isset($data) ? $data->birthdate : '' }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" id="country" name="country" value="{{ isset($data) ? $data->country : '' }}" placeholder="Enter country" list="country-list" required>
+        <datalist id="country-list">
+            <option value="United States">
+            <option value="Canada">
+            <option value="United Kingdom">
+            <option value="Australia">
+            <option value="Sri Lanka">
+        </datalist>
+    </div>
+
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" value="{{ isset($data) ? $data->city : '' }}" placeholder="Enter city" required>
+    </div>
+
+    <div class="form-group">
+        <label for="workplace">Workplace</label>
+        <input type="text" class="form-control" id="workplace" name="workplace" value="{{ isset($data) ? $data->workplace : '' }}" placeholder="Enter workplace" required>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" name="age" value="{{ isset($data) ? $data->age : '' }}" placeholder="Enter age" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ isset($data) ? 'Update Details' : 'Add Details' }}</button>
+</form>
+
+
+            </div>
+        </div>
     </main>
- 
 
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('birthdate').addEventListener('change', function() {
+            const birthdate = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const m = today.getMonth() - birthdate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').innerText = `Age: ${age}`;
+        });
+    </script>
 </body>
 
 </html>

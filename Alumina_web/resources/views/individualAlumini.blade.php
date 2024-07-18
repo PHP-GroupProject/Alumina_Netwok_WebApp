@@ -255,22 +255,12 @@
                 <h1>Alexander Lee</h1>
                 <p>Full Stack Web Developer</p>
             </div>
-            <div class="profile-actions">
-            <a href="{{ route('message') }}" class="btn connect-btn">Message</a>
-            <a href="{{ url('/message') }}" class="btn message-btn">Contact</a>
-            <a href="{{ route('profile.details') }}" class="btn message-btn">Update Profile</a>
-            </div>
-        </div>
-        @if (isset($availability))
-        <div class="container">
-            <h2>Added Details:</h2>
-            <p><strong>Availability:</strong> {{ $availability }}</p>
-            <p><strong>Birthdate:</strong> {{ $birthdate }}</p>
-            <p><strong>Country:</strong> {{ $country }}</p>
-            <p><strong>City:</strong> {{ $city }}</p>
-            <p><strong>Workplace:</strong> {{ $workplace }}</p>
-        </div>
-    @endif
+    <div class="profile-actions">
+        <a href="{{ route('message') }}" class="btn connect-btn">Message</a>
+        <a href="{{ url('/message') }}" class="btn message-btn">Contact</a>
+        <a href="{{ route('ProfileDetails') }}" class="btn message-btn">Update Profile</a>
+    </div>
+
         <div class="socialmedia">
     
             <div class="social-login">
@@ -281,24 +271,28 @@
                 <a href="#"><img src="images\whatsapp.png" alt="whtsapp"></a>
             </div>
 
+            @foreach ($alumini_details as $data)
+
             <div class="details">
                 <div class="info-item">
                     <span class="label">Availability</span>
-                    <span class="value">Full Time</span>
+                    <span class="value">{{ $data->availability }}</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Age</span>
-                    <span class="value">30yrs</span>
+                    <span class="value">{{ $data->age }}</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Location</span>
-                    <span class="value">Moscow, Russia</span>
-                </div>
+                    <span class="value">{{ $data->country }}, {{ $data->city }}</span>
+                                </div>
                 <div class="info-item">
                     <span class="label">Workplace</span>
-                    <span class="value">IFS</span>
+                    <span class="value">{{ $data->workplace }}</span>
                 </div>
             </div>
+            @endforeach
+
         </div>
 
 
