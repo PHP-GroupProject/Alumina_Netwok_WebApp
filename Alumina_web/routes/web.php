@@ -17,13 +17,19 @@ Route::get('/register', [PageController::class, 'register'])->name('register');
 Route::post('/register', [PageController::class, 'registerPost'])->name('register.post');
 Route::get('/logout', [PageController::class, 'logout'])->name('logout');
 Route::get('/message', [PageController::class, 'message'])->name('message');
+
 Route::get('/profile-details', function () {
     return view('components.ProfileDetails');
 })->name('profile.details');
+
 Route::post('/store/alumni', [PageController::class, 'store'])->name('store.alumni');
+
 Route::get('/message', function () {
     return view('message');
 })->name('message');
+
+//view registerd alumini
+Route::get('/alumini', [PageController::class, 'view_alumini'])->name('alumini');
 
 
 

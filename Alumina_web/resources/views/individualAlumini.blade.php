@@ -250,15 +250,16 @@
                 <img src="{{ asset('images\profile7.jpg') }}" alt="Profile Picture">
             </div>
         </div>
+        
         <div class="profile-container">
             <div class="profile-details">
-                <h1>Alexander Lee</h1>
-                <p>Full Stack Web Developer</p>
+                <h1>alexender lee</h1>
+                <p>IFS</p>
             </div>
             <div class="profile-actions">
             <a href="{{ route('message') }}" class="btn connect-btn">Message</a>
-            <a href="{{ url('/message') }}" class="btn message-btn">Contact</a>
-            <a href="{{ route('profile.details') }}" class="btn message-btn">Update Profile</a>
+            <a href="{#connect}" class="btn message-btn">Connect</a>
+            <!--a href="{{ route('profile.details') }}" class="btn message-btn">Update Profile</a-->
             </div>
         </div>
         @if (isset($availability))
@@ -270,7 +271,7 @@
             <p><strong>City:</strong> {{ $city }}</p>
             <p><strong>Workplace:</strong> {{ $workplace }}</p>
         </div>
-    @endif
+        @endif
         <div class="socialmedia">
     
             <div class="social-login">
@@ -284,15 +285,15 @@
             <div class="details">
                 <div class="info-item">
                     <span class="label">Availability</span>
-                    <span class="value">Full Time</span>
+                    <span class="value">full time</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Age</span>
-                    <span class="value">30yrs</span>
+                    <span class="value">25</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Location</span>
-                    <span class="value">Moscow, Russia</span>
+                    <span class="value">SRI LANKA</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Workplace</span>
@@ -300,6 +301,7 @@
                 </div>
             </div>
         </div>
+        
 
 
 

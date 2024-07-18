@@ -23,34 +23,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #F8FBF9;
-            margin: auto;
+            background: linear-gradient(to right, white -20%, #063D19 80%);
+            padding: 10px 25px;
             color: white;
-            height: 158px;
-            width: 1440px;
         }
-
         .header img {
-            height: 114px;
-            width: 114px;;
+            height: 55px;
+            width: 60px;
         }
         .header nav a {
-            margin: 0 20px;
+            margin: 0 15px;
             color: #063D19;
             text-decoration: none;
-            font-size: 24px;
-            font-weight: 400;
         }
         .header .login {
-            background: linear-gradient(to right, #192D20 0%,#1F5C33 59%, #013111 100%);
-            color: #fff;
+            background-color: white;
+            color: #015C20;
             padding: 10px 35px;
             border: none;
             cursor: pointer;
             border-radius: 10px;
-            width: 198px;
-            height: 80.1px;
-            font-size: 24px;
         }
 
         /* landing page content */
@@ -410,7 +402,8 @@
             <a href="{{ route('jobs') }}">Jobs</a>
             <a href="#">Contact</a>
         </nav>
-        <button class="login">Login</button>
+        <a href="{{ route('profile.details') }}" class="btn message-btn">Update Profile</a>
+        
     </header>
 
 

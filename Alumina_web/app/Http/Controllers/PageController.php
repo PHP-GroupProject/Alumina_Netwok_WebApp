@@ -117,6 +117,7 @@ class PageController extends Controller
             'country' => 'required',
             'city' => 'required',
             'workplace' => 'required',
+            
         ]);
 
         $alumniDetail = AlumniDetail::create($validatedData);
@@ -124,4 +125,12 @@ class PageController extends Controller
         return view('individualAlumini', $validatedData);
     }
 
+    public function view_alumini()
+    {
+        $users = User::all()->toArray(); // Fetch all users and convert to array
+        return view('alumini', compact('users')); // Pass the users data to the view
+    
+    }
+
+    
 }

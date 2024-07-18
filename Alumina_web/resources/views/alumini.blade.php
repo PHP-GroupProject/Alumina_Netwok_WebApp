@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5V58IK0DIDfAzzn6H0oz5kq0A8AlX8gGHbqDd" crossorigin="anonymous">
-   <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -150,42 +150,14 @@
     <div class="main-content">
         <div class="content-box">
             <div class="alumni-list">
-                <a href="{{ route('individualAlumini', ['id' => 1]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile1.jpg') }}" alt="Profile1">
-                    <div class="alumni-item">
-                        <span>Jane Doe<br>Graduated in 2021</span>
-                    </div>
-                </a>
-                <a href="{{ route('individualAlumini', ['id' => 2]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile2.jpg') }}" alt="Profile2">
-                    <div class="alumni-item">
-                        <span>Emily Smith<br>Graduated in 2020</span>
-                    </div>
-                </a>
-                <a href="{{ route('individualAlumini', ['id' => 3]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile3.jpg') }}" alt="Profile3">
-                    <div class="alumni-item">
-                        <span>David Johnson<br>Graduated in 2019</span>
-                    </div>
-                </a>
-                <a href="{{ route('individualAlumini', ['id' => 4]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile4.jpg') }}" alt="Profile4">
-                    <div class="alumni-item">
-                        <span>Emma Thompson<br>Graduated in 2021</span>
-                    </div>
-                </a>
-                <a href="{{ route('individualAlumini', ['id' => 5]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile12.jpg') }}" alt="Profile1">
-                    <div class="alumni-item">
-                        <span>Sarah Brown<br>Graduated in 2015</span>
-                    </div>
-                </a>
-                <a href="{{ route('individualAlumini', ['id' => 6]) }}" class="alumni-box">
-                    <img src="{{ asset('images/Profile10.jpg') }}" alt="Profile1">
-                    <div class="alumni-item">
-                        <span>Alexander Hernandez<br>Graduated in 2017</span>
-                    </div>
-                </a>
+            @foreach ($users as $user)
+<a href="{{ route('individualAlumini', ['name' => $user['name']]) }}" class="alumni-box">
+    <img src="{{ asset('images/default_profile.jpg') }}" alt="{{ $user['name'] }}">
+    <div class="alumni-item">
+        <span>{{ $user['name'] }}<br>Email: {{ $user['email'] }}</span>
+    </div>
+</a>
+@endforeach
             </div>
         </div>
         <aside class="sidebar">
@@ -194,6 +166,7 @@
                     <h3>Friends</h3>
                 </div>
                 <div class="horizontal-line"></div>
+                <!-- Static friend items as an example -->
                 <div class="friend-item">
                     <img src="{{ asset('images/Profile5.jpg') }}" alt="Profile5">
                     <span>Sophia Miller</span>

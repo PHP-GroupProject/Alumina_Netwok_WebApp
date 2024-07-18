@@ -15,6 +15,7 @@ class AlumniDetail extends Model
         'country',
         'city',
         'workplace',
+       
      
     ];
 }
