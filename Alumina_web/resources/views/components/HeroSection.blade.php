@@ -29,7 +29,6 @@
         .header img {
             height: 55px;
             width: 60px;
-            ;
         }
 
         .header nav a {
@@ -52,7 +51,7 @@
             margin-top: 100px;
         }
 
-        .Herocontent {
+        .HeroContent {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
@@ -84,81 +83,83 @@
             color: #515151;
         }
 
-        .search-container {
-            display: flex;
-            margin-top: 50px;
-            margin-left: 100px;
-            align-items: flex-start;
-        }
-
-        .search-bar {
+        .searchbar {
+            margin-bottom: auto;
+            margin-top: auto;
+            margin-left: 150px;
+            height: 65px;
+            background-color: #353b48;
+            border-radius: 30px;
+            padding: 10px;
             display: flex;
             align-items: center;
-            background: white;
-            box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.08);
-            border-radius: 50px;
-            padding: 10px;
-            width: 700px;
-            height: 50px;
         }
 
-        .search-bar input {
-            flex-grow: 1;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            color: #515151;
-            padding-left: 20px;
-            border-radius: 50px 0 0 50px;
+        .searchbar form {
+            display: flex;
+            width: 100%;
+            margin: 0;
         }
 
-        .search-bar button {
-            background: #1D442A;
+        .search_input {
             color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 0 30px;
-            font-size: 16px;
-            font-weight: 600;
+            margin-left: 10px;
+            border: 0;
+            outline: 0;
+            background: none;
+            width: 450px;
+            font-size: 17px;
+            caret-color: red;
+            line-height: 40px;
+            transition: width 0.4s linear;
+        }
+
+        .searchbar:hover > .search_input{
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+  
+   .search_icon:hover{
+    background: white;
+    color: #e74c3c;
+    }
+
+        .search_icon {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            background: none;
+            margin-left: 10px;
             cursor: pointer;
-            height: 150%;
         }
-
-        .search-bar .search-icon {
-            font-size: 20px;
-            color: #dbdbdb;
-            margin-right: 10px;
-            margin-left: 20px;
-        }
-
-
     </style>
 </head>
 
 <body>
-  
+
     <div class="HeroSection">
-   
-        <div class="Herocontent">
+        <div class="HeroContent">
             <img src="{{ asset('images/BulbLogo.png') }}" alt="Bulb Logo" class="bulb-logo">
             <div class="text-content">
                 <h1>Get your <span class="highlight">dream</span> job<br>with Link Plus.</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod sed do eiusmod</p>
             </div>
         </div>
-        <div class="search-container">
-            <div class="search-bar">
-                <span class="search-icon">
-                    <i class="fa fa-search"></i>
-                </span>
-                <input type="text" placeholder="Job Title, keywords......">
-                <button>Search</button>
+   
+        <div class="d-flex justify-content-center h-100">
+            <div class="searchbar">
+                <form method="GET" action"{{url('/jobs/search')}}>
+                    <input class="search_input" type="search" name="search" placeholder="Jobs, Title, Keywords">
+                    <a href="#" class="search_icon" type="submit"><i class="fas fa-search" ></i></a>
+                </form>
             </div>
         </div>
     </div>
-
- 
-  
 </body>
 
 </html>

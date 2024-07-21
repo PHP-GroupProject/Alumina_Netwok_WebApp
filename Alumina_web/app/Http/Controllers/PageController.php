@@ -149,4 +149,12 @@ class PageController extends Controller
 
         return redirect()->route('individualAlumini');
     }
+
+
+    // public function search(Request $request)
+    // {
+    //     $search = $request->search;
+    //     $data = Jobs_table::where('', 'Like', '%' . $search . '%')->orWhere('', 'Like', '%' . $search . '%')->orWhere('', 'Like', '%' . $search . '%')->get();
+    //     return view('Jobs', compact('data'));
+    // }
 }
