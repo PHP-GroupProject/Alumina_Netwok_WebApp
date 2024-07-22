@@ -23,6 +23,7 @@ Route::get('/message', [PageController::class, 'message'])->name('message');
 Route::post('/profile-details', [PageController::class, 'store'])->name('store.alumni');
 Route::get('/profile-details/{id?}', [PageController::class, 'form'])->name('ProfileDetails');
 Route::put('/profile-details/{id}', [PageController::class, 'update'])->name('store.alumni');
+Route::get('/jobs/search', [PageController::class, 'search'])->name('search');
 
 Route::get('/individualAlumini', [PageController::class, 'individualAlumini'])->name('individualAlumini');
 
