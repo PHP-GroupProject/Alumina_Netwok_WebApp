@@ -144,20 +144,20 @@
         <button class="login">Login</button>
     </header>
     <div class="search-bar">
-        <input type="text" placeholder="Search">
+        <input type="text" id="search" placeholder="Search">
         <i class="fas fa-search search-icon"></i>
     </div>
     <div class="main-content">
         <div class="content-box">
-            <div class="alumni-list">
-            @foreach ($users as $user)
-<a href="{{ route('individualAlumini', ['name' => $user['name']]) }}" class="alumni-box">
-    <img src="{{ asset('images/default_profile.jpg') }}" alt="{{ $user['name'] }}">
-    <div class="alumni-item">
-        <span>{{ $user['name'] }}<br>Email: {{ $user['email'] }}</span>
-    </div>
-</a>
-@endforeach
+        <div class="alumni-list" id="alumni-list">
+                @foreach ($users as $user)
+                <a href="{{ route('individualAlumini', ['name' => $user['name']]) }}" class="alumni-box">
+                    <img src="{{ asset('images/default_profile.jpg') }}" alt="{{ $user['name'] }}">
+                    <div class="alumni-item">
+                        <span>{{ $user['name'] }}<br>Email: {{ $user['email'] }}</span>
+                    </div>
+                </a>
+                @endforeach
             </div>
         </div>
         <aside class="sidebar">
@@ -171,28 +171,32 @@
                     <img src="{{ asset('images/Profile5.jpg') }}" alt="Profile5">
                     <span>Sophia Miller</span>
                 </div>
-                <div class="friend-item">
-                    <img src="{{ asset('images/Profile6.jpg') }}" alt="Profile6">
-                    <span>Ethan Clark</span>
-                </div>
-                <div class="friend-item">
-                    <img src="{{ asset('images/Profile7.jpg') }}" alt="Profile7">
-                    <span>Alexander Lee</span>
-                </div>
-                <div class="friend-item">
-                    <img src="{{ asset('images/Profile8.jpg') }}" alt="Profile8">
-                    <span>Grace Walker</span>
-                </div>
-                <div class="friend-item">
-                    <img src="{{ asset('images/Profile9.jpg') }}" alt="Profile8">
-                    <span>Ethan Martinez</span>
-                </div>
-                <div class="friend-item">
-                    <img src="{{ asset('images/Profile11.jpg') }}" alt="Profile8">
-                    <span>Grace Robinson</span>
-                </div>
+                <!-- Add other friend items here -->
             </div>
         </aside>
     </div>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            var query = this.value.toLowerCase();
+            console.log('Query:', query); // Debugging line
+            var alumniList = document.getElementById('alumni-list');
+            if (alumniList) {
+                var profiles = alumniList.getElementsByClassName('alumni-box');
+                console.log('Profiles found:', profiles.length); // Debugging line
+                for (var i = 0; i < profiles.length; i++) {
+                    var name = profiles[i].getElementsByClassName('alumni-item')[0].innerText.toLowerCase();
+                    console.log('Profile:', name); // Debugging line
+                    if (name.includes(query)) {
+                        profiles[i].style.display = 'flex';
+                    } else {
+                        profiles[i].style.display = 'none';
+                    }
+                }
+            } else {
+                console.error('Alumni list not found!');
+            }
+        });
+    </script>
 </body>
 </html>

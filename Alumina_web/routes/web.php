@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/events', [PageController::class, 'events'])->name('events');
@@ -30,6 +31,8 @@ Route::get('/message', function () {
 
 //view registerd alumini
 Route::get('/alumini', [PageController::class, 'view_alumini'])->name('alumini');
+
+Route::get('/search', [ProfileController::class, 'search'])->name('search');
 
 
 
