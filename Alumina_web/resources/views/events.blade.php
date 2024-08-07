@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Network</title>
+    <title>Event Details</title>
     <style>
-        body {
+       body {
             font-family: 'Lora';
             margin: 0;
             padding: 0;
@@ -162,35 +162,27 @@
             gap: 20px;
             justify-content: space-between;
         }
-        .eventset {
-            width: 280px;
-            position: relative;
+        .addnew-button {
+            border-radius: 6px;
+            background-color: green;
+            color: white; /* Text color */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Add some padding */
+            font-size: 16px; 
+            cursor: pointer; 
+            text-decoration: none;
+            top: 200px; 
+            margin-left: 800px; 
+            display: inline-block; 
+
         }
-        .eventset img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-        .eventset .tag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .eventset .date,
-        .eventset .des {
-            font-size: 12px;
-            color: #6c757d;
-            font-weight: lighter;
-        }
-        .eventset h3 {
-            font-size: 18px;
-            color: #495057;
-            font-weight: bold;
+        .event-list{
+
         }
     </style>
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <img src="{{ asset('images/logo.png') }}" width="45" height="25">
         <nav>
             <a href="{{ route('welcome') }}">Home</a>
@@ -291,6 +283,10 @@
     </script>
 
     <div class="popular">
+    <div class="container">
+    <a href="{{ route('create') }}" class="addnew-button">Add New Event</a>
+
+    </div>
         <h3> Popular Events </h3>
 
         <div class="filter">
@@ -301,50 +297,40 @@
             <p>Artificial Intelligence</p>
         </div>
 
-        <div class="category">
-        <div class="eventset">
-    <a href="{{ route('singleEvent') }}">
-        <div class="image-container">
-            <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-            <span class="tag">Workshop</span></a>
-        </div>
-        <p class="date">08.08.2021</p>
-        <h3>Dream destinations to visit this year in Paris</h3>
-        <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
-    
-</div>
 
-            <div class="eventset">
-            <a href="{{ route('singleEvent') }}">
-                <div class="image-container">
-                    <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span></a>
-                </div>
-                <p class="date">08.08.2021</p>
-                <h3>Dream destinations to visit this year in Paris</h3>
-                <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
-            </div>
-            <div class="eventset">
-            <a href="{{ route('singleEvent') }}">
-                <div class="image-container">
-                    <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span></a>
-                </div>
-                <p class="date">08.08.2021</p>
-                <h3>Dream destinations to visit this year in Paris</h3>
-                <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
-            </div>
-            <div class="eventset">
-            <a href="{{ route('singleEvent') }}">
-                <div class="image-container">
-                    <img src="{{ asset('images/hero_image3.jpg') }}" alt="">
-                    <span class="tag">Workshop</span></a>
-                </div>
-                <p class="date">08.08.2021</p>
-                <h3>Dream destinations to visit this year in Paris</h3>
-                <p class="des">Progressively incentivize cooperative systems through technically sound functionalities. Credibly productivate seamless data with flexible schemas.</p>
-            </div>
+
+    <div class="container">
+        <h2>Event Details</h2>
+        <div id="event-list">
+            <!-- This is where event details will be dynamically inserted -->
         </div>
+        <form method="GET" action="{{ route('events') }}">
+            @csrf
+            <button type="submit" class="btn-secondary">Back to Events</button>
+        </form>
     </div>
+
+    <script>
+        // Assume eventsData is an array of objects containing event details fetched from backend
+        const eventsData = {!! json_encode($events) !!};
+        
+        const eventListContainer = document.getElementById('event-list');
+        
+        // Loop through eventsData and generate HTML for each event
+        eventsData.forEach(event => {
+            const eventHTML = `
+                <div class="event-item">
+                    <h3>${event.title}</h3>
+                    <p><strong>Date:</strong> ${event.date}</p>
+                    <p><strong>Venue:</strong> ${event.venue}</p>
+                    <p><strong>Description:</strong> ${event.description}</p>
+                    <p><strong>Images:</strong> ${event.images}</p>
+                    <p><strong>Keywords:</strong> ${event.keywords}</p>
+                </div>
+                <hr>
+            `;
+            eventListContainer.innerHTML += eventHTML;
+        });
+    </script>
 </body>
 </html>
