@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EventController;
+
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/events', [PageController::class, 'events'])->name('events');
@@ -33,6 +35,10 @@ Route::get('/message', function () {
 Route::get('/alumini', [PageController::class, 'view_alumini'])->name('alumini');
 
 Route::get('/search', [ProfileController::class, 'search'])->name('search');
+// Event routes
+Route::get('/create', [EventController::class, 'create'])->name('create');
+Route::post('/events', [EventController::class, 'store'])->name('store');
+Route::get('/events', [EventController::class, 'index'])->name('events');
 
 
 
